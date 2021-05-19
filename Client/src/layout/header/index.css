@@ -1,0 +1,23 @@
+
+.Header{
+    font-family: Arial,sans-serif;
+}
+
+.navbar-expand-lg .navbar-collapse .navbar-nav{
+    align-items: center;
+}
+
+.navbar .navbar-collapse .mr-auto{
+    align-items:center;
+}
+
+.hrefTag{
+    color: rgb(0 0 0 / 79%);
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+}
+a:hover {
+    color: rgb(0, 0, 0) !important;
+    text-decoration: none;
+}

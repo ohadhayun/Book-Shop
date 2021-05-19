@@ -1,0 +1,107 @@
+
+h4.bookTitle {
+    color: #333333;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 17px;
+    overflow: hidden;
+    height: 40px;
+    margin-top: 5px;
+    line-height: 20px;
+}
+
+.Container {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.starsDesign{
+    display: inline-block;
+}
+
+.VideoTag{
+    width: 100%;
+    height: 400px;
+}
+
+.TitleClass{
+    font-size: 25px;
+    line-height: 2.3;
+    padding-bottom: 4px;
+    padding: 0;
+    margin: 0;
+    font-family: Arial,sans-serif;
+}
+
+.underLine{
+    border-bottom: 1px solid #ccc!important;
+    border-top: 1px solid #e7e7e7;
+    margin-bottom: 12px!important;
+    margin-top: 20px!important;
+    border-top: 1px solid #e7e7e7;
+    border-width: 0;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+}
+
+.TitleOfCards{
+    text-align: left;
+    padding-left: 35px;
+}
+
+.seeMore{
+    position: relative; 
+    padding-right: 9px;
+    color: #0066c0;
+    float: right!important;
+    font-size: 13px!important;
+    line-height: 19px!important;
+    font-weight: 400!important;
+
+}
+
+.see-more-container{
+    align-self: flex-end;
+}
+
+.onSale{
+    position: relative;
+}
+
+.writerName{
+    font-weight: 700!important;
+    line-height: 24px!important;
+    font-size: 20px;
+    color: #007185;
+}
+
+.stock{
+    font-size: 15px!important;
+    color: #007600!important;
+}
+
+.outStock{
+    font-size: 15px!important;
+    color: #f50606!important;
+}
+
+.sticky{
+    background-color: #d4e3e6;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    z-index: 9999 !important;
+    /* height: 200px; */
+    height: 0px;
+}
+
+.orderSummer{
+    border: groove;
+    margin-top: 20px;
+    background-color: #cadadc;
+}
