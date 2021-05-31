@@ -36,15 +36,15 @@ function Blog() {
         const allCards = array.map((cardBlog, index) => {
             return (
                 <Col lg={4}  key={index} style={{marginBottom: "1rem"}}>
-                <Card style={{minHeight: "450px"}}>
+                <Card>
                     <Card.Body>
                     <Card.Img className="Image" variant="top" src={`http://localhost:3006/images/${cardBlog.img}`}>
                 
                 </Card.Img>
-                    <Card.Title>{cardBlog.title.slice(0, 70)} ..</Card.Title>
+                    <Card.Title className= "text">{cardBlog.title} ..</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">{cardBlog.data}</Card.Subtitle>
-                        <Card.Text>
-                            {cardBlog.article.slice(0, 110)}...
+                        <Card.Text className= "text">
+                            {cardBlog.article}...
                         </Card.Text>
                         <Card.Link target="_blank" href={cardBlog.link}>Go to full report.</Card.Link>
                     </Card.Body>
@@ -58,10 +58,10 @@ function Blog() {
     <div>
         <Container style={{ display: loadingState ? 'block' : 'none'}}><Loading /></Container>
         <Container style={{ display: loadingState ? 'none' : 'block'}}>
-            <Row className='justify-content-center'>
-            <h1>Blog</h1>
+            <Row className='justify-content-center' style={{margin: "20px"}}>
+            <img src="blog.jpg" alt="blog" width="100%"></img>
             </Row>
-            <h4 style={{margin: "1rem"}}>Welcome to our blog, here you can find all kinds of articles.</h4>
+            <h4 style={{margin: "2rem"}}>Welcome to our blog, here you can find all kinds of articles.</h4>
             <Row>
                 {mapBlog(posts)}
             </Row>

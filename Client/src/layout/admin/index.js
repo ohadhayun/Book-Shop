@@ -1,16 +1,3 @@
-// import React from "react";
-// // import './index.css';
-
-// function ListOrder(){
-//     return (
-//         <div>
-
-//         </div>
-//     );
-// }
-// export default ListOrder;
-
-
 import * as React from 'react';
 import { DataGrid } from '@material-ui/data-grid';
 

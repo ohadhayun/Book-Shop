@@ -21,5 +21,4 @@ app.use('/blog', blogRoutes);
 
 // app.use('/contact', contactUsRoutes);
 
-
 app.listen(process.env.PORT || 3006, () => {console.log("server is running..")});
