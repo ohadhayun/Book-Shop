@@ -9,12 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useForm } from "react-hook-form";
 
-// import SideBar from "../../layout/Sidebar/sidebar.js";
-// import {Navigation} from 'react-minimal-side-navigation';
-// import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
-// import { allProducts } from '../allProductsService'
 import * as apiFunctions from '../../API/api'
-
 
 import './index.css'
 import { StoreContext } from "../../Context/Store";
@@ -67,7 +62,6 @@ function Header({ numberOfProducts }) {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-
                     <Nav.Link><Link className="hrefTag" to="/home">Home</Link></Nav.Link>
                     <Nav.Link ><Link className="hrefTag" to="/aboutUs">About Us</Link></Nav.Link>
                     
@@ -86,7 +80,6 @@ function Header({ numberOfProducts }) {
                     </IconButton>
                     {/* <Nav.Link color="secondary" href="cart"><AiOutlineShoppingCart style={{ fontSize: "32px" }} /></Nav.Link> */}
                 </Nav>
-
                 <Nav.Link><Link className="hrefTag" to="/FormPage">Login</Link></Nav.Link>/
                 <Nav.Link><Link className="hrefTag" to="/register">Register</Link></Nav.Link>
                 <Form inline onChange={handleSubmit(onSubmit)}>
@@ -95,27 +88,9 @@ function Header({ numberOfProducts }) {
                         <Button type="submit" variant="outline-light">Search</Button>
                     </Link>
                 </Form>
-
             </Navbar.Collapse>
         </Navbar>
     );
 }
 
 export default Header;
-
-// function ReactForm() {
-//   const { register, handleSubmit, watch, errors } = useForm();
-//   const onSubmit = data => console.log(data);
-
-//   console.log(watch("exampleRequired")); // watch input value by passing the name of it
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <input name="example" defaultValue="test"  ref={register} />
-//       <input name="exampleRequired" ref={register({ required: true })} />
-//       {errors.exampleRequired && <span>This field is required</span>}
-//       <input type="submit" />
-//     </form>
-//   );
-// }
-// export default ReactForm;

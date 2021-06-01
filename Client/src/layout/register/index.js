@@ -1,45 +1,33 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBInput } from 'mdbreact';
 import './index.css'
 import { useForm } from "react-hook-form";
 import { userRequestLogOrReg } from '../../API/api'
 
-
 function Register() {
-  // const { register, handleSubmit, errors} = useForm();
-  // const onSubmit = (data) =>{
-  //   console.log(data);
-  // }
-  // const [formData,setFormData] =useState();
-  // function handleInput(e){
-  //   const data = {[e.target.name]:e.target.value}; // =  {email/password:'current value'}
-  //   setFormData({...formData,...data})
-  // }
-
-  //
 
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
-    if (formData.email !== formData.reemail){
+    if (formData.email !== formData.reemail) {
       alert('The email is not match, try again');
       return;
-    }
+    };
     console.log(formData);
-    try{const sendToServer = await userRequestLogOrReg('users', 'register', formData) 
+    try {
+      const sendToServer = await userRequestLogOrReg('users', 'register', formData)
       console.log(sendToServer);
       alert('Successfully register!');
-    } 
+    }
     catch (error) {
       console.log(error);
       alert('This email already signed-up.');
     };
   }
-  // textInput.ref = register({ required: true });
-  const [formData,setFormData] =useState();
+  const [formData, setFormData] = useState();
 
-  function handleInput(e){
-    const data = {[e.target.name]:e.target.value}; // =  {email/password:'current value'}
-    setFormData({...formData,...data})
+  function handleInput(e) {
+    const data = { [e.target.name]: e.target.value }; // =  {email/password:'current value'}
+    setFormData({ ...formData, ...data })
   }
 
   return (
@@ -51,7 +39,7 @@ function Register() {
             <p className="h5 text-center mb-4">Sign up</p>
             <div className="grey-text">
               <MDBInput onInput={handleInput} ref={register} name="name" label="Your name" icon="user" group type="text" validate error="wrong"
-                success="right" value={register.blabla}/>
+                success="right" value={register.blabla} />
               <MDBInput onInput={handleInput} name="email" label="Your email" icon="envelope" group type="email" validate error="wrong"
                 success="right" />
               <MDBInput onInput={handleInput} name="reemail" label="Confirm your email" icon="exclamation-triangle" group type="text" validate

@@ -1,18 +1,17 @@
 import { Card, Button, CardDeck, Container, Row, Col, CardGroup, CardColumns } from "react-bootstrap";
 import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs"
 import ButtonBases from './fadeimage.js';
-// import { allProducts } from '../allProductsService'
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import * as apiFunctions from '../../API/api'
 import './index.css';
 import CardComp from "./cardComponent"
 // for rolling 1-10
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Pagination from '@material-ui/lab/Pagination';
-import {StoreContext} from '../../Context/Store';
+import { StoreContext } from '../../Context/Store';
 // untill here
 
 // for rolling 1-10
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function MainPage() {
-    
+
     // for rolling 1-10
     const classes = useStyles();
     const [page, setPage] = useState(1);
@@ -35,22 +34,22 @@ function MainPage() {
         setPage(value);
     };
     // untill here
-    
-    const onAddProd = (prod) =>{
+
+    const onAddProd = (prod) => {
         updateStore(
             {
-          ...store,
-          cart:{
-              ...store.cart,
-              productsArr: [
-                  ...store.cart.productsArr,
-                  prod,
-                // {product: prod, time:Date.now()}
-              ],
-              totalPrice: Number((store.cart.totalPrice + prod.price).toFixed(2)),
-              howManyProducts: store.cart.howManyProducts + 1
-          }
-        }
+                ...store,
+                cart: {
+                    ...store.cart,
+                    productsArr: [
+                        ...store.cart.productsArr,
+                        prod,
+                        // {product: prod, time:Date.now()}
+                    ],
+                    totalPrice: Number((store.cart.totalPrice + prod.price).toFixed(2)),
+                    howManyProducts: store.cart.howManyProducts + 1
+                }
+            }
         )
     }
 
@@ -64,41 +63,21 @@ function MainPage() {
         return produtsMap;
     }
 
-
     const [allProducts, setAllProducts] = useState([]);
     useEffect(async () => {
         const apiArrayProducts = await apiFunctions.getAll('books');
-
         let groupProducts = apiArrayProducts.data.reduce((r, a) => {
             r[a.category] = [...r[a.category] || [], a];
             return r;
         }, {});
-        // console.log(Object.values(groupProducts));
         setAllProducts(groupProducts);
     }, []);
 
-
-    // console.log(Object.keys(groupProducts).length);
-
     const cardsCount = Math.ceil(Object.keys(allProducts).length / 3);
-    // console.log(cardsCount);
-
-
     const [categoryState, setCategoryState] = useState(false);
     const [activeCategoryArray, setActiveCategoryArray] = useState([]);
 
-
-    // function switchToCategoryState(categoryName) {
-    //     // groupProducts['kids']// == [{},{}];
-    //     //update the active category array based on category name
-    //     setCategoryState(true);
-    //     setActiveCategoryArray(groupProducts[categoryName]);
-    //     <Link to={`/${categoryName}`}></Link>
-    //     // console.log(categoryName);
-    // }
-
     function printRow(array, isLimit) {
-        // console.log(array);
         return <div>
             <Row className="underLine" style={{ display: "flex", justifyContent: "space-between", width: "100%" }} >
                 <h1 className="TitleClass">
@@ -111,14 +90,13 @@ function MainPage() {
                 </div>
             </Row>
             <Row style={{ display: "flex", justifyContent: "center" }}>
-
                 <CardGroup >
                     {cardMap(array, isLimit)}
                 </CardGroup>
-
             </Row>
         </div>
     }
+
     return (
         <div>
             <Row>
@@ -134,7 +112,6 @@ function MainPage() {
             <Row id="section1">
                 <ButtonBases style={{ border: "2px solid grey", borderColor: "rgb(187, 187, 187)" }} />
             </Row>
-
             <div className="Container">
                 {categoryState ?
                     printRow(activeCategoryArray, false) :
@@ -156,7 +133,5 @@ function MainPage() {
         </div>
     )
 }
-
-
 
 export default MainPage;

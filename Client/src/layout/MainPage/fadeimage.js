@@ -3,26 +3,25 @@ import { Link } from "react-router-dom"
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
- 
 
 const images = [
   {
     url: 'recomendation.jpg',
     title: 'Our Recomands',
     width: '33.3%',
-    link:"/blog"
+    link: "/blog"
   },
   {
     url: 'contactUs.jpg',
     title: 'Contact Us',
     width: '33.3%',
-    link:"/contactUs"
+    link: "/contactUs"
   },
   {
     url: 'alotbooks.jpg',
     title: 'Donate us your old books',
     width: '33.3%',
-    link:""
+    link: ""
   },
 ];
 
@@ -115,28 +114,27 @@ export default function ButtonBases() {
           }}
         >
           <Link className="link-1" to={image.link}>
-          <span
-            className={classes.imageSrc}
-            style={{
-              backgroundImage: `url(${image.url})`,
-            }}
-          />
-          <span className={classes.imageBackdrop} />
-          <span className={classes.imageButton}>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              className={classes.imageTitle}
-            >
-              {image.title}
-              <span className={classes.imageMarked} />
-            </Typography>
-          </span>
+            <span
+              className={classes.imageSrc}
+              style={{
+                backgroundImage: `url(${image.url})`,
+              }}
+            />
+            <span className={classes.imageBackdrop} />
+            <span className={classes.imageButton}>
+              <Typography
+                component="span"
+                variant="subtitle1"
+                color="inherit"
+                className={classes.imageTitle}
+              >
+                {image.title}
+                <span className={classes.imageMarked} />
+              </Typography>
+            </span>
           </Link>
         </ButtonBase>
       ))}
     </div>
   );
-}
-
+};

@@ -4,7 +4,6 @@ import { BsStarFill, BsStar, BsStarHalf } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
-
 function CardComp({product, index, onAddToCart}){
     
     return (
@@ -32,7 +31,6 @@ function CardComp({product, index, onAddToCart}){
 
 function onMouse(that) {
     <Button type="button" className="button-actions btn-addtocart" tabIndex="-1"></Button>
-    
     // console.log('answer');
 }
 

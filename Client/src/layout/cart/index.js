@@ -5,7 +5,6 @@ import TextField from '@material-ui/core/textfield';
 import './index.css';
 import { useContext } from 'react';
 import { StoreContext } from '../../Context/Store'
-
 import PayPalBtn from './PayPal/paypal'
 
 const topSelling = [{
@@ -87,9 +86,7 @@ const topSelling = [{
 },
 ];
 
-
 function SeeMoreProducts(props) {
-
 
     const paypalSubscribe = (data, actions) => {
         return actions.subscription.create({
@@ -107,17 +104,9 @@ function SeeMoreProducts(props) {
 
     // dinamic cart
     const [store, updateStore] = useContext(StoreContext);
-    console.log(store.cart);
 
-    const [cartArray, setTopSelling] = useState(store.cart.productsArr)
     function removeItemFromArray(product, index) {
-        // let newTopSelling = cartArray.filter((book) => book.id !== product.id);
-        // setTopSelling(newTopSelling);
-
         store.cart.productsArr.splice(index, 1);
-        console.log(index);
-        // let cartProducts = store.cart.productsArr.filter((book) => book.id !== product.id)
-        console.log(store.cart.productsArr);
         updateStore({
             ...store,
             cart: {
@@ -160,7 +149,6 @@ function SeeMoreProducts(props) {
                             /></li> */}
                             <li> <Button onClick={() => removeItemFromArray(product, index)} variant="outline-danger">Remove</Button>{' '}</li>
                         </ul>
-
                     </Col>
                 </Row>
             );
@@ -183,11 +171,8 @@ function SeeMoreProducts(props) {
                         <Dropdown.Item href="#/action-3">Alphabetic</Dropdown.Item>
                     </DropdownButton>
                 </div>
-
             </Row>
-
             {array}
-
         </div>
     }
 
@@ -199,8 +184,8 @@ function SeeMoreProducts(props) {
                     <Row>
                         <img src="risehandbook.jpg" alt="Education, kid raise his hand" width="100%"></img>
                     </Row>
-                    <Container>
 
+                    <Container>
                         <Row className="sticky">
                             <Col md={{ span: 4, offset: 8 }} className="orderSummer">
                                 <h2 style={{ justifyContent: "center" }}>Order summar</h2><br></br>
@@ -224,9 +209,6 @@ function SeeMoreProducts(props) {
                     </Container>
                 </>
             }
-
-
-
         </div>
     )
 }
